@@ -1,0 +1,355 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.0.0",
+  "deps": {
+    "@solana-developers/preset-next": "3.0.1",
+    "@solana/spl-token": "0.4.6",
+    "@solana/wallet-adapter-base": "^0.9.23",
+    "@solana/wallet-adapter-react": "^0.15.35",
+    "@solana/wallet-adapter-react-ui": "^0.9.35",
+    "@solana/web3.js": "1.91.9",
+    "@tabler/icons-react": "3.5.0",
+    "@tailwindcss/typography": "0.5.13",
+    "@tanstack/react-query": "5.40.0",
+    "@tanstack/react-query-next-experimental": "5.40.0",
+    "bs58": "5.0.0",
+    "buffer": "6.0.3",
+    "daisyui": "4.11.1",
+    "encoding": "0.1.13",
+    "jotai": "2.8.3",
+    "next": "14.0.4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-hot-toast": "2.4.1",
+    "tslib": "^2.3.0",
+    "@nx/eslint": "19.0.0",
+    "@nx/eslint-plugin": "19.0.0",
+    "@nx/js": "19.0.0",
+    "@nx/next": "19.0.0",
+    "@nx/workspace": "19.0.0",
+    "@swc-node/register": "~1.8.0",
+    "@swc/core": "~1.3.85",
+    "@swc/helpers": "~0.5.2",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.3.0",
+    "@typescript-eslint/parser": "^7.3.0",
+    "autoprefixer": "10.4.13",
+    "eslint": "~8.57.0",
+    "eslint-config-next": "14.0.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "nx": "19.0.0",
+    "postcss": "8.4.21",
+    "prettier": "^2.6.2",
+    "tailwindcss": "3.2.7",
+    "typescript": "~5.4.2"
+  },
+  "pathMappings": {
+    "@/*": [
+      "./web/*"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {
+      "web": [
+        {
+          "file": "web/.eslintrc.json",
+          "hash": "14075324894068274553"
+        },
+        {
+          "file": "web/app/account/[address]/page.tsx",
+          "hash": "6596633881127005929"
+        },
+        {
+          "file": "web/app/account/page.tsx",
+          "hash": "10599815897590818234"
+        },
+        {
+          "file": "web/app/api/hello/route.ts",
+          "hash": "495073956729887886"
+        },
+        {
+          "file": "web/app/clusters/page.tsx",
+          "hash": "14394253094813460549"
+        },
+        {
+          "file": "web/app/global.css",
+          "hash": "7108397253489769203"
+        },
+        {
+          "file": "web/app/layout.tsx",
+          "hash": "4920778408995009021"
+        },
+        {
+          "file": "web/app/page.module.css",
+          "hash": "4786619528779355986"
+        },
+        {
+          "file": "web/app/page.tsx",
+          "hash": "13253388527033690273"
+        },
+        {
+          "file": "web/app/react-query-provider.tsx",
+          "hash": "3045630838846882828",
+          "deps": [
+            "npm:react",
+            "npm:@tanstack/react-query-next-experimental",
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "web/app/styles/Home.module.css",
+          "hash": "3740630508298039801"
+        },
+        {
+          "file": "web/components/account/account-data-access.tsx",
+          "hash": "12486200012402042725",
+          "deps": [
+            "npm:@solana/wallet-adapter-react",
+            "npm:@solana/spl-token",
+            "npm:@solana/web3.js",
+            "npm:@tanstack/react-query",
+            "npm:react-hot-toast"
+          ]
+        },
+        {
+          "file": "web/components/account/account-detail-feature.tsx",
+          "hash": "5078510326215063839",
+          "deps": [
+            "npm:@solana/web3.js",
+            "npm:react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "web/components/account/account-list-feature.tsx",
+          "hash": "729224853085720231",
+          "deps": [
+            "npm:@solana/wallet-adapter-react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "web/components/account/account-ui.tsx",
+          "hash": "15669230551060885779",
+          "deps": [
+            "npm:@solana/wallet-adapter-react",
+            "npm:@solana/web3.js",
+            "npm:@tabler/icons-react",
+            "npm:@tanstack/react-query",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "web/components/cluster/cluster-data-access.tsx",
+          "hash": "14689816500549093808",
+          "deps": [
+            "npm:@solana/web3.js",
+            "npm:jotai",
+            "npm:react",
+            "npm:react-hot-toast"
+          ]
+        },
+        {
+          "file": "web/components/cluster/cluster-feature.tsx",
+          "hash": "3533560093864689157",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "web/components/cluster/cluster-ui.tsx",
+          "hash": "16307074544026673789",
+          "deps": [
+            "npm:@solana/wallet-adapter-react",
+            "npm:@tabler/icons-react",
+            "npm:@tanstack/react-query",
+            "npm:react",
+            "npm:@solana/web3.js"
+          ]
+        },
+        {
+          "file": "web/components/solana/solana-provider.tsx",
+          "hash": "12581651433492400723",
+          "deps": [
+            "npm:next",
+            "npm:@solana/wallet-adapter-base",
+            "npm:@solana/wallet-adapter-react",
+            "npm:@solana/wallet-adapter-react-ui",
+            "npm:react",
+            [
+              "npm:@solana/wallet-adapter-react-ui",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "web/components/tokenaccount/BalanceDisplay.tsx",
+          "hash": "11625737476056684032",
+          "deps": [
+            "npm:@solana/wallet-adapter-react",
+            "npm:@solana/web3.js",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "web/components/tokenaccount/CreateMint.tsx",
+          "hash": "4047676142650215656",
+          "deps": [
+            "npm:@solana/wallet-adapter-react",
+            "npm:@solana/web3.js",
+            "npm:react",
+            "npm:@solana/spl-token"
+          ]
+        },
+        {
+          "file": "web/components/tokenaccount/CreateTokenAccount.tsx",
+          "hash": "11326888435762061963",
+          "deps": [
+            "npm:@solana/wallet-adapter-react",
+            "npm:@solana/web3.js",
+            "npm:react",
+            "npm:@solana/spl-token"
+          ]
+        },
+        {
+          "file": "web/components/tokenaccount/MintToForm.tsx",
+          "hash": "7106040226303031971",
+          "deps": [
+            "npm:@solana/wallet-adapter-react",
+            "npm:@solana/web3.js",
+            "npm:react",
+            "npm:@solana/spl-token"
+          ]
+        },
+        {
+          "file": "web/components/ui/ui-layout.tsx",
+          "hash": "1030024198912347003",
+          "deps": [
+            "npm:react",
+            "npm:next",
+            "npm:react-hot-toast"
+          ]
+        },
+        {
+          "file": "web/index.d.ts",
+          "hash": "5498222895072842432"
+        },
+        {
+          "file": "web/next-env.d.ts",
+          "hash": "5909181270615354023"
+        },
+        {
+          "file": "web/next.config.js",
+          "hash": "11075275437133129850",
+          "deps": [
+            "npm:@nx/next"
+          ]
+        },
+        {
+          "file": "web/postcss.config.js",
+          "hash": "2759402739052110475",
+          "deps": [
+            "npm:path"
+          ]
+        },
+        {
+          "file": "web/project.json",
+          "hash": "2951579398516498055"
+        },
+        {
+          "file": "web/public/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "web/public/favicon.ico",
+          "hash": "13871463210711627531"
+        },
+        {
+          "file": "web/public/logo.png",
+          "hash": "577251929812501589"
+        },
+        {
+          "file": "web/public/solanaLogo.png",
+          "hash": "16971921372823706720"
+        },
+        {
+          "file": "web/tailwind.config.js",
+          "hash": "15953156811378497776",
+          "deps": [
+            "npm:@nx/react",
+            "npm:path",
+            "npm:daisyui"
+          ]
+        },
+        {
+          "file": "web/tsconfig.json",
+          "hash": "10836663897421372905"
+        }
+      ]
+    },
+    "nonProjectFiles": [
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "17866138117546000433"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "6516810976673135739"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "16448050467312557263"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "4134969992917317260"
+      },
+      {
+        "file": "LICENSE",
+        "hash": "11946900819603466163"
+      },
+      {
+        "file": "README.md",
+        "hash": "1449198335640336344"
+      },
+      {
+        "file": "nx.json",
+        "hash": "4016400154553827196"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "76583251485631379"
+      },
+      {
+        "file": "package.json",
+        "hash": "8944327219056662416"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "16965330727927312399"
+      },
+      {
+        "file": "vercel.json",
+        "hash": "1598408354266276258"
+      }
+    ]
+  }
+}

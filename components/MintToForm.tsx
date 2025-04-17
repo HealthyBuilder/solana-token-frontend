@@ -9,6 +9,7 @@ import {
   TOKEN_PROGRAM_ID,
   ASSOCIATED_TOKEN_PROGRAM_ID,
   getAccount,
+  createAssociatedTokenAccountInstruction,
 } from "@solana/spl-token";
 
 export const MintToForm: FC = () => {
@@ -30,6 +31,47 @@ export const MintToForm: FC = () => {
     }
     
     // BUILD AND SEND MINT TRANSACTION HERE
+    // const transaction = new web3.Transaction();
+
+    const mintPubKey = new web3.PublicKey(event.target.mint.value);
+
+    const recipientPubKey = new web3.PublicKey(event.target.recipient.value);
+
+    const amountRaw = event.target.amount.value;
+
+    const amount = BigInt(amountRaw); 
+
+    // 3. 获取最新 blockhash（手动指定，避免旧方法）
+    const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash();
+
+    // 4. 构建交易
+    const transaction = new web3.Transaction({
+      feePayer: publicKey,
+      recentBlockhash: blockhash,
+    });
+
+    const associatedToken = await getAssociatedTokenAddress(
+      mintPubKey,
+      recipientPubKey,
+      false,
+      TOKEN_PROGRAM_ID,
+      ASSOCIATED_TOKEN_PROGRAM_ID,
+    );
+
+    transaction.add(
+      createMintToInstruction(mintPubKey, associatedToken, publicKey, amount)
+    );
+
+    // ✅ 只发一次！不要多次调用 sendTransaction
+    const signature = await sendTransaction(transaction, connection);
+
+    await connection.confirmTransaction(signature, "confirmed");
+
+    setTxSig(signature);
+    setTokenAccount(associatedToken.toString());
+
+    const account = await getAccount(connection, associatedToken);
+    setBalance(account.amount.toString());
   };
 
   return (

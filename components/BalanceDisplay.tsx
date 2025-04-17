@@ -11,10 +11,11 @@ export const BalanceDisplay: FC = () => {
     if (!connection || !publicKey) {
       return;
     }
-
-    connection.getAccountInfo(publicKey).then((info) => {
-      setBalance(info.lamports);
-    });
+  //   connection.getAccountInfo(publicKey).then((info) => {
+  //     setBalance(info.lamports);
+  //   });
+  // }, [connection, publicKey]);
+    connection.getBalance(publicKey).then(setBalance);
   }, [connection, publicKey]);
 
   return (

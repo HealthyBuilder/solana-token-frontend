@@ -27,8 +27,44 @@ export const CreateTokenAccountForm: FC = () => {
     if (!connection || !publicKey) {
       return;
     }
+
+    // 3. 获取最新 blockhash（手动指定，避免旧方法）
+    const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash();
+
+      // 4. 构建交易
+    const transaction = new web3.Transaction({
+      feePayer: publicKey,
+      recentBlockhash: blockhash,
+    });
+
+    // const transaction = new web3.Transaction();
+    const owner = new web3.PublicKey(event.target.owner.value);
+    const mint = new web3.PublicKey(event.target.mint.value);
     
     // BUILD AND SEND CREATE TOKEN ACCOUNT TRANSACTION HERE
+    const associatedToken = await getAssociatedTokenAddress(
+      mint,
+      owner,
+      false,
+      TOKEN_PROGRAM_ID,
+      ASSOCIATED_TOKEN_PROGRAM_ID,
+    );
+
+    transaction.add(
+      createAssociatedTokenAccountInstruction(
+        publicKey,
+        associatedToken,
+        owner,
+        mint,
+        TOKEN_PROGRAM_ID,
+        ASSOCIATED_TOKEN_PROGRAM_ID,
+      )
+    );
+
+    sendTransaction(transaction, connection).then((sig) => {
+      setTxSig(sig),
+      setTokenAccount(associatedToken.toString());
+    });
   };
 
   return (
